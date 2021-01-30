@@ -1,0 +1,1 @@
+pyuic5 C:\projek_python\TectGraPort\mw.ui -o C:\projek_python\TectGraPort\mw.py
