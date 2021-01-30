@@ -6,12 +6,25 @@ x = 2354
 
 
 
+
 class Pararel (QThread):
     def __init__(self, mianwindow, parent=None):
         super().__init__()
-        self.mianwindow = mianwindow
+        # self.mianwindow = mianwindow
+
+    def pusk_mw_tu(self):
+        app = QtWidgets.QApplication(sys.argv)
+        windowto = Hoodoo()
+        windowto.show()
+        print("старт вікна")
+        app.exec()
 
     def run(self):
+        # app = QtWidgets.QApplication(sys.argv)
+        windowto = Hoodoo()
+        windowto.show()
+        print("старт вікна")
+        app.exec()
         y = 1
         for i in range(500):
             time.sleep(0.01)
@@ -30,8 +43,6 @@ class Hoodoo(QtWidgets.QMainWindow,Ui_MainWindow):
         self.lineEdit_2.editingFinished.connect(self.ushov)
         self.gopstop = Pararel(mianwindow=self)
 
-    def run(self):
-        self.gopstop.start()
 
     def ushov(self):
         global x
@@ -47,14 +58,14 @@ class Hoodoo(QtWidgets.QMainWindow,Ui_MainWindow):
         self.lineEdit_3.setText(self.lineEdit_2.text())
         self.lineEdit.clear()
         self.lineEdit_2.clear()
+        # self.gopstop.pusk_mw_tu()
         print("robotae")
-
 
     def knopka(self):
         global x
-        self.lineEdit.setText(str(x))
         x += 1
-        self.run()
+        self.lineEdit.setText(str(x))
+        self.gopstop.start()
         print(str(x))
 
     def pechat(self):
