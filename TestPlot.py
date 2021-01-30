@@ -2,7 +2,7 @@ import sys,time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QThread
 from mw import Ui_MainWindow
-x = 23
+x = 2354
 
 
 
