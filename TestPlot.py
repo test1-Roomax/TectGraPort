@@ -3,7 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QThread
 from mw import Ui_MainWindow
 x = 23
-333444
+333444evsv
 
 
 class Pararel (QThread):
